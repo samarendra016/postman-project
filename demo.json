@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "b2a441ce-2b6f-4d6c-8acf-8ee63fe7f4d9",
+		"name": "ReqresApi",
+		"description": "Reqres fake api call for dumy api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllUsers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a2c76fd2-f5ad-437d-9f00-032174e73d03",
+						"exec": [
+							"",
+							"pm.test(\"verify Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {",
+							"  //  console.log(\"my response\"+response.json());",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}{{users}}",
+					"host": [
+						"{{baseUrl}}{{users}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8aafc55d-d9cc-4fca-a8c1-c6979ce115d9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6eee59c7-82db-4b65-a683-d54869fd6ffc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
